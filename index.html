@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System & Location Information</title>
+    <meta name="description" content="Dashboard displaying basic device and network information.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-elements" id="background-elements">
+    </div>
+
+    <main class="dashboard-container">
+        <header>
+            <div class="logo">
+                <div class="radar"></div>
+                <h1>SysView<span>.net</span></h1>
+            </div>
+            <p>Scanning local device and network environment</p>
+
+            <div class="search-box">
+                <input type="text" id="ip-input" placeholder="Enter IP Address (or leave empty for your own)"
+                    autocomplete="off">
+                <button id="search-btn" class="glow-btn small-btn">
+                    <span class="btn-text">Search IP</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </div>
+        </header>
+
+        <section class="grid" id="info-grid">
+            <!-- Loading state initially -->
+            <div class="card loading" id="ip-card">
+                <div class="icon">🌍</div>
+                <div class="details">
+                    <h3>Public IP Address</h3>
+                    <p class="value" id="ip-value">Scanning...</p>
+                </div>
+            </div>
+
+            <div class="card loading" id="os-card">
+                <div class="icon">💻</div>
+                <div class="details">
+                    <h3>Operating System</h3>
+                    <p class="value" id="os-value">Analyzing...</p>
+                </div>
+            </div>
+
+            <div class="card loading" id="browser-card">
+                <div class="icon">🌐</div>
+                <div class="details">
+                    <h3>Browser</h3>
+                    <p class="value" id="browser-value">Detecting...</p>
+                </div>
+            </div>
+
+            <div class="card loading" id="screen-card">
+                <div class="icon">🖥️</div>
+                <div class="details">
+                    <h3>Screen Resolution</h3>
+                    <p class="value" id="screen-value">Measuring...</p>
+                </div>
+            </div>
+
+            <div class="card loading" id="location-card">
+                <div class="icon">📍</div>
+                <div class="details">
+                    <h3>Approximate Location</h3>
+                    <p class="value" id="location-value">Locating...</p>
+                </div>
+            </div>
+
+            <div class="card loading" id="country-card">
+                <div class="icon">🏳️</div>
+                <div class="details">
+                    <h3>Country</h3>
+                    <p class="value" id="country-value">Detecting...</p>
+                </div>
+            </div>
+
+            <div class="card loading" id="timezone-card">
+                <div class="icon">🕒</div>
+                <div class="details">
+                    <h3>Time Zone</h3>
+                    <p class="value" id="timezone-value">Detecting...</p>
+                </div>
+            </div>
+
+            <div class="card loading" id="isp-card">
+                <div class="icon">📡</div>
+                <div class="details">
+                    <h3>ISP / Network Provider</h3>
+                    <p class="value" id="isp-value">Detecting...</p>
+                </div>
+            </div>
+
+            <div class="card loading" id="org-card">
+                <div class="icon">🏢</div>
+                <div class="details">
+                    <h3>Organization</h3>
+                    <p class="value" id="org-value">Detecting...</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <button id="refresh-btn" class="glow-btn">
+                <span class="btn-text">Refresh Data</span>
+                <span class="btn-glow"></span>
+            </button>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
